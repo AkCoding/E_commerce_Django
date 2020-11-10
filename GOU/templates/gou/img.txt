@@ -1,0 +1,19 @@
+   <!--    <br>-->
+
+    <!--    <div class="row my-4 mx-4">-->
+    <!--        <br>-->
+    <!--        <div class="col-lg-4 col-sm-6 portfolio-item">-->
+    <!--            <div class="card h-100">-->
+    <!--               <a style="text-decoration:none; color:black" href="/postview/{{dnews.slug}}">-->/
+    <!--                    <img class="card-img-top" src="{{url_for('static',filename=fname)}}"-->
+    <!--                         alt="">-->
+    <!--                    <div class="card-body">-->
+    <!--                        <h4 class="card-title">-->
+    <!--                            {{dnews.name}}-->
+    <!--                        </h4>-->
+    <!--                        <p class="card-text">{{dnews.description[0:150]}}...</p>-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->

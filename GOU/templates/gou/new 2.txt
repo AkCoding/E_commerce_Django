@@ -1,0 +1,487 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'hello',
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  bool isSwitched = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+          child: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Engineering Hub'),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+              ),
+            ),
+            ListTile(
+              title: Text('Computer Science'),
+              onTap: () {
+
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Civil'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Electronic & Comm'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Information Technology'),
+              onTap: () {
+
+              },
+            ),ListTile(
+              title: Text('Mechanical'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
+      ) // Populate the Drawer by adding content in the next step.
+          ),
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text('EngineeringHub'),
+      ),
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int index) =>
+            EntryItem(data[index]),
+        itemCount: data.length,
+      ),
+    );
+  }
+}
+
+class Entry {
+  Entry(this.title, [this.children = const <Entry>[]]);
+
+  final String title;
+  final List<Entry> children;
+}
+
+final List<Entry> data = <Entry>[
+  Entry(
+    'Computer Science',
+    <Entry>[
+      Entry(
+        'First Year',
+        <Entry>[
+          Entry('First Sem',
+         <Entry>[
+           Entry('2019'),
+           Entry('2018'),
+           Entry('2017'),
+         ] ),
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Second Year',
+        <Entry>[
+          Entry('Third Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Fourth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Third Year',
+        <Entry>[
+          Entry('Fifth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Six Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Fourth Year',
+        <Entry>[
+          Entry('Seven Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Eight Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+    ],
+  ),
+  Entry(
+    'Civil',
+    <Entry>[
+      Entry(
+        'First Year',
+        <Entry>[
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ] ),
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Second Year',
+        <Entry>[
+          Entry('Third Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Fourth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Third Year',
+        <Entry>[
+          Entry('Fifth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Six Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Fourth Year',
+        <Entry>[
+          Entry('Seven Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Eight Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+    ],
+  ),
+  Entry(
+    'Electronic & Comm',
+    <Entry>[
+      Entry(
+        'First Year',
+        <Entry>[
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ] ),
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Second Year',
+        <Entry>[
+          Entry('Third Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Fourth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Third Year',
+        <Entry>[
+          Entry('Fifth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Six Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Fourth Year',
+        <Entry>[
+          Entry('Seven Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Eight Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+    ],
+  ),
+  Entry(
+    'Information Technology',
+    <Entry>[
+      Entry(
+        'First Year',
+        <Entry>[
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ] ),
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Second Year',
+        <Entry>[
+          Entry('Third Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Fourth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Third Year',
+        <Entry>[
+          Entry('Fifth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Six Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Fourth Year',
+        <Entry>[
+          Entry('Seven Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Eight Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+    ],
+  ),
+  Entry(
+    'Mechanical',
+    <Entry>[
+      Entry(
+        'First Year',
+        <Entry>[
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ] ),
+          Entry('First Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Second Year',
+        <Entry>[
+          Entry('Third Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Fourth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Third Year',
+        <Entry>[
+          Entry('Fifth Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Six Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+      Entry(
+        'Fourth Year',
+        <Entry>[
+          Entry('Seven Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+          Entry('Eight Sem',
+              <Entry>[
+                Entry('2019'),
+                Entry('2018'),
+                Entry('2017'),
+              ]),
+        ],
+      ),
+    ],
+  ),
+
+
+];
+
+class EntryItem extends StatelessWidget {
+  const EntryItem(this.entry);
+
+  final Entry entry;
+
+  Widget _buildTiles(Entry root) {
+    if (root.children.isEmpty) return ListTile(title: Text(root.title));
+    return ExpansionTile(
+      key: PageStorageKey<Entry>(root),
+      title: Text(root.title),
+      children: root.children.map(_buildTiles).toList(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _buildTiles(entry);
+  }
+}
+
+void main() {
+  runApp(MyApp());
+}
